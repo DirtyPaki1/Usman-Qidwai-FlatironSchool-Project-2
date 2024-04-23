@@ -1,28 +1,32 @@
 import React, { useState } from 'react';
 
-function AddMovieForm() {
- const [title, setTitle] = useState('');
+function AddMovieForm({ movies }) {
+ const [searchTitle, setSearchTitle] = useState('');
 
- const handleSubmit = (event) => {
+ const handleSearch = (event) => {
     event.preventDefault();
-    
-   
-const newMovie = { title: "Interstellar" };
-console.log(newMovie)
-
+    // Assuming you have a function to find a movie by title
+    const foundMovie = movies.find(movie => movie.title === searchTitle);
+    console.log(foundMovie);
  };
 
  return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSearch}>
       <input
         type="text"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        placeholder="Movie title"
+        value={searchTitle}
+        onChange={(e) => setSearchTitle(e.target.value)}
+        placeholder="Search movie title"
       />
-      <button type="submit">Add Movie</button>
+  
+
+      <button type="submit">Search Movie</button>
+    
     </form>
  );
 }
 
 export default AddMovieForm;
+
+
+

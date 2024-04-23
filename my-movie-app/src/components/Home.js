@@ -4,7 +4,7 @@ import React from "react";
     console.log('Hello');
     return (
        
-        <p>Home Page.</p>
+        <p>Home......</p>
     )
     
     

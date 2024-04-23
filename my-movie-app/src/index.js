@@ -5,8 +5,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Contact from './components/Contact';
 import Home from './components/Home';
-import MovieList  from './components/MovieList';
+import About from './components/About';
 import AddMovieForm from './components/AddMovieForm';
+import NavBar from './components/Navbar';
+
+ 
+
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
@@ -15,8 +21,11 @@ root.render(
    <Contact/>
    <Home />
   </React.StrictMode>
-  <MovieList/>
+
   <AddMovieForm/>
+  <NavBar/>
+<About />
+
   
 
 
