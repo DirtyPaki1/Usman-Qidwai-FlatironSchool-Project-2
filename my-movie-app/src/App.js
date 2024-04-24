@@ -1,47 +1,46 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
 import MovieList from './components/MovieList';
 import AddMovieForm from './components/AddMovieForm';
-import React, { useState } from 'react';
+import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
-  const [movies, setMovies] = useState([
-     { title: 'The Matrix' },
-     { title: '21 Jump Street' },
-     { title: '22 Jump Street' },
+ const [movies, setMovies] = useState([
+    { title: 'The Matrix' },
+    { title: '21 Jump Street' },
+    { title: '22 Jump Street' },
+ ]);
 
-  ]);
- 
-  const addMovie = (newMovie) => {
-     setMovies([...movies, newMovie]);
-  };
- 
-  // Example usage of addMovie
-  addMovie({ title: 'New Movie' });
- 
-  return (
-     <Router>
-       <Navbar />
-       <Routes>
-         <Route path="/" exact component={Home} />
-         <Route path="/about" component={About} />
-         <Route path="/contact" component={Contact} />
-         <Route path="/movies" component={MovieList} />
-         <Route path="/add-movie" element={<AddMovieForm addMovie={addMovie} />} />
-       </Routes>
-       <div>
-         <h1>Search for a Movie</h1>
-         <AddMovieForm movies={movies} />
-       </div>
-     </Router>
-  );
- }
- 
+ const addMovie = (newMovie) => {
+    setMovies([...movies, newMovie]);
+ };
+
+ return (
+    <ErrorBoundary>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <AddMovieForm addMovie={addMovie} />
+              <MovieList movies={movies} />
+            </>
+          } />
+          <Route path="/movies" element={<MovieList movies={movies} />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Home />
+        </Routes>
+      </Router>
+    </ErrorBoundary>
+ );
+}
+
+
 
 export default App;
-
-
 
