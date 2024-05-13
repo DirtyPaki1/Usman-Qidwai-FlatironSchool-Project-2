@@ -1,25 +1,30 @@
-// MovieList.js
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-function MovieList() {
- const [movies, setMovies] = useState([]);
+export const MovieList = () => {
+    const [movies] = useState([
+        {
+            name: 'Harry Potter',
+            price: '$10',
+            id: 23124
+        },
+        {
+            name: 'Game of Thrones',
+            price: '$10',
+            id: 2566124
+        },
+        {
+            name: 'Inception',
+            price: '$10',
+            id: 23524
+        }
+    ]);
 
- useEffect(() => {
-    fetch('')
-      .then(response => response.json())
-      .then(data => setMovies(data));
- }, []);
-
-
- 
-
- return (
-    <div>
-      {movies.map(movie => (
-        <div key={movie.id}>{movie.title}</div>
-      ))}
-    </div>
- );
+    return (
+        <div>
+            {movies.map(movie => (
+                <li key={movie.id}>{movie.name}</li>
+            ))}
+        </div>
+    );
 }
-
 export default MovieList;

@@ -3,8 +3,10 @@ import React from "react";
   function Home() {
     console.log('Hello');
     return (
-       
-        <p>Home......</p>
+       <>
+            <p>Home, This is where </p>
+       </>
+   
     )
     
     

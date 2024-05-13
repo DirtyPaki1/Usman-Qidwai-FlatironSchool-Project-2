@@ -8,9 +8,9 @@ function Navbar() {
        <nav>
          <ul>
            <li><Link to="/">Home</Link></li>
-           <li><Link to="./About.js">About</Link></li>
+           <li><Link to="./About">About</Link></li>
            <li><Link to="./Contact">Contact</Link></li>
-           <li> <Link to="./AddMovieForm.js">Add Movies</Link></li>
+           <li> <Link to="./AddMovieForm">Add Movies</Link></li>
            
          </ul>
        </nav>
