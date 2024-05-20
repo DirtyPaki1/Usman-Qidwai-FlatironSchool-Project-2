@@ -1,8 +1,88 @@
 {
-    "movies": [
-       { "id": 1, "title": "Titanic" },
-       { "id": 2, "title": "Inception" },
-       {"id":3,"title":"21 Jump Street"}
-    ]
-   }
-   
+  "movies": [
+    {
+      "id": "1",
+      "title": "Avatar"
+    },
+    {
+      "id": "2",
+      "title": "21 Jump Street"
+    },
+    {
+      "id": "3",
+      "title": "22 Jump Street"
+    },
+    {
+      "id": "4",
+      "title": "The Matrix"
+    },
+    {
+      "id": "5",
+      "title": "Ghost Rider"
+    },
+    {
+      "id": "6",
+      "title": "Pineapple Express"
+    },
+    {
+      "id": "7",
+      "title": "Avengers"
+    },
+    {
+      "id": "8",
+      "title": "Justice League"
+    },
+    {
+      "id": "9",
+      "title": "Baywatch"
+    },
+    {
+      "id": "10",
+      "title": "Fast and Furious"
+    },
+    {
+      "id": "2fca",
+      "title": ""
+    },
+    {
+      "id": "673f",
+      "title": ""
+    },
+    {
+      "id": "67a8",
+      "title": "Avengers"
+    },
+    {
+      "id": "4106",
+      "title": "Naruto"
+    },
+    {
+      "id": "7455",
+      "title": "Sasuke"
+    },
+    {
+      "id": "afbe",
+      "title": "Naruto"
+    },
+    {
+      "id": "9cd9",
+      "title": ""
+    },
+    {
+      "id": "b07a",
+      "title": ""
+    },
+    {
+      "id": "b7ed",
+      "title": "Mark"
+    },
+    {
+      "id": "8fef",
+      "title": "Naruto"
+    },
+    {
+      "id": "08c9",
+      "title": "Infinity Wars"
+    }
+  ]
+}

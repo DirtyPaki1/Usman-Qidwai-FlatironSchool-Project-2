@@ -4,7 +4,7 @@ import React from "react";
     console.log('Hello');
     return (
        <>
-            <p>Home, This is where </p>
+            <p> <b>Welcome To this Movie App.</b> </p>
        </>
    
     )

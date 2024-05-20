@@ -7,6 +7,7 @@ function Contact() {
         <p>If you have any problems contact us. Please specify what the problem is</p>
        
         </>
+        
     );
 }
 export default Contact;

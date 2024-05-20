@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {   useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 
@@ -8,22 +8,38 @@ import MovieList from './components/MovieList';
 import AddMovieForm from './components/AddMovieForm';
 import Home from './components/Home';
 
+
+
+
 function App() {
- const [movies, setMovies] = useState([
-    { title: 'The Matrix' },
-    { title: '21 Jump Street' },
-    { title: '22 Jump Street' },
-    {title:'Ghost Rider'},
-    {title:'Avatar'}
- ]);
+  const [movies, setMovies] = useState([]);
 
- const addMovie = (newMovie) => {
+  const getData = () => {
+    fetch('http://localhost:3001/movies')
+     .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+     .then((data) => {
+        setMovies(data);
+      })
+     .catch((error) => {
+        console.error('There has been a problem with your fetch operation:', error);
+      });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const addMovie = (newMovie) => {
     setMovies([...movies, newMovie]);
- };
+  };
 
- useEffect(() => {
-  console.log(movies);
-}, [movies])
+
+
 
 
  return (
@@ -34,8 +50,14 @@ function App() {
           <Route path="/" element={
             <>
               <AddMovieForm addMovie={addMovie} />
+              
               <MovieList movies={movies} />
+             
               <Home/>
+         
+
+            
+        
               
              
             </>
@@ -44,6 +66,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/AddMovieForm" element={<AddMovieForm />} />
+          
+         
 
           
 
