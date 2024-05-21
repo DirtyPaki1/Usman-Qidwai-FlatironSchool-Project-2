@@ -4,22 +4,24 @@
 import React, { useState } from 'react';
 
 
-const AddMovieForm = ({ addMovie }) => {
+const AddMovieForm = (props, { addMovie }) => {
   const [title, setTitle] = useState('');
-
+   console.log(props);
   const handleSubmit = async (e) => {
+  console.log(e)
     e.preventDefault();
     const configObj = {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json','Accept':'application/json' },
       body: JSON.stringify({ title })
     };
     try {
       const res = await fetch('http://localhost:3001/movies', configObj);
       const data = await res.json();
+      console.log(data)
       addMovie(data);
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
     setTitle('');
   };
@@ -35,5 +37,9 @@ const AddMovieForm = ({ addMovie }) => {
     </form>
   );
 };
+
+
+
+
 
 export default AddMovieForm;

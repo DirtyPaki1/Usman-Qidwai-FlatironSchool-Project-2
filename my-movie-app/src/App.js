@@ -50,7 +50,7 @@ function App() {
           <Route path="/" element={
             <>
               <AddMovieForm addMovie={addMovie} />
-              
+     
               <MovieList movies={movies} />
              
               <Home/>
@@ -65,7 +65,7 @@ function App() {
          <Route path="/movies" element={<MovieList movies={movies} />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/AddMovieForm" element={<AddMovieForm />} />
+          <Route path="/add-movie-form" element={<AddMovieForm />} />
           
          
 
