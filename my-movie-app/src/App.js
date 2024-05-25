@@ -49,11 +49,12 @@ function App() {
         <Routes>
           <Route path="/" element={
             <>
-              <AddMovieForm addMovie={addMovie} />
+       
      
-              <MovieList movies={movies} />
+            
              
               <Home/>
+              <MovieList movies={movies} />
          
 
             
@@ -62,10 +63,11 @@ function App() {
              
             </>
           } />
+         
          <Route path="/movies" element={<MovieList movies={movies} />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/add-movie-form" element={<AddMovieForm />} />
+          <Route path="/add-movie-form" element={<AddMovieForm addMovie={addMovie}/>} />
           
          
 

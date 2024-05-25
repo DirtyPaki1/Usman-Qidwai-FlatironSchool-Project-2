@@ -4,9 +4,9 @@
 import React, { useState } from 'react';
 
 
-const AddMovieForm = (props, { addMovie }) => {
+const AddMovieForm = ( { addMovie }) => {
   const [title, setTitle] = useState('');
-   console.log(props);
+   
   const handleSubmit = async (e) => {
   console.log(e)
     e.preventDefault();
