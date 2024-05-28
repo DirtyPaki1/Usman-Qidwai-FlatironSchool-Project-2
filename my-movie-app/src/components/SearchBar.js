@@ -11,7 +11,7 @@ function SearchBar() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(`Searching for: ${query}`);
-    // Additional search logic here
+
   };
 
   return (
